@@ -1,0 +1,24 @@
+BoxLayout:
+    orientation: 'vertical'
+
+    # Layout where dynamic labels will be added
+    BoxLayout:
+        orientation: 'vertical'
+        id: entries_box  # Labels will be added here dynamically
+
+    # Status text for the app (this could be updated dynamically)
+    Label:
+        size_hint_y: 0.1
+        text: app.status_text
+        color: (1, 1, 0, 1)  # Optional: text color (yellow)
+
+    # Buttons to trigger dynamic widget actions
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: 0.2
+        Button:
+            text: "Create Widgets"
+            on_press: app.create_widgets()
+        Button:
+            text: "Clear Widgets"
+            on_press: app.clear_all()
